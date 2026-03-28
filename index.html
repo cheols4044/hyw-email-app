@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -27,36 +27,34 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
 .nav-tab{padding:5px 13px;border-radius:var(--r2);font-size:13px;color:var(--text2);cursor:pointer;border:none;background:transparent;transition:.15s}
 .nav-tab:hover{background:var(--bg3);color:var(--text)}
 .nav-tab.active{background:var(--accent);color:#fff}
-.topbar-right{display:flex;align-items:center;gap:10px}
+.topbar-right{display:flex;align-items:center;gap:8px}
 .user-badge{display:flex;align-items:center;gap:8px;padding:5px 12px;background:var(--bg3);border:1px solid var(--border2);border-radius:20px;font-size:12px;cursor:pointer;transition:.15s}
 .user-badge:hover{border-color:var(--accent)}
 .user-avatar{width:24px;height:24px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
-.sync-btn{padding:6px 13px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);color:var(--text);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.15s}
+.sync-btn{padding:6px 13px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);color:var(--text);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:.15s}
 .sync-btn:hover{border-color:var(--accent);color:var(--accent)}
+.history-btn{padding:6px 13px;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.3);border-radius:var(--r2);color:var(--purple);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:.15s}
+.history-btn:hover{background:rgba(168,85,247,.25)}
 
 /* LOGIN */
-#loginScreen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:40px 20px}
-.login-card{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:44px 48px;text-align:center;max-width:420px;width:100%}
-.login-logo{font-size:28px;font-weight:800;color:var(--accent);margin-bottom:6px;letter-spacing:-1px}
-.login-sub{font-size:13px;color:var(--text2);margin-bottom:28px;line-height:1.7}
-.ms-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px;background:#2f6bcd;border:none;border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:.15s;margin-bottom:10px}
+#loginScreen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px}
+.login-card{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:40px 44px;text-align:center;max-width:400px;width:100%}
+.login-logo{font-size:26px;font-weight:800;color:var(--accent);margin-bottom:5px;letter-spacing:-1px}
+.login-sub{font-size:13px;color:var(--text2);margin-bottom:24px;line-height:1.7}
+.ms-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px;background:#2f6bcd;border:none;border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
 .ms-btn:hover{background:#1e56b8}
-.ms-btn:disabled{background:#1e3a6e;opacity:.6;cursor:not-allowed}
-.login-note{font-size:11px;color:var(--text3);line-height:1.7;margin-top:8px}
-
-.setup-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:22px 26px;max-width:420px;width:100%}
-.setup-title{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:14px}
-.setup-row{margin-bottom:10px}
-.setup-row label{display:block;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.setup-input{width:100%;padding:8px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);font-size:13px;outline:none;transition:.15s}
+.login-note{font-size:11px;color:var(--text3);line-height:1.7;margin-top:10px}
+.setup-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;max-width:400px;width:100%}
+.setup-title{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:12px}
+.setup-row{margin-bottom:9px}
+.setup-row label{display:block;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.setup-input{width:100%;padding:7px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);font-size:13px;outline:none;transition:.15s}
 .setup-input:focus{border-color:var(--accent)}
-.setup-save{width:100%;padding:9px;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--r2);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;margin-top:6px;transition:.15s}
+.setup-save{width:100%;padding:8px;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--r2);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;margin-top:5px;transition:.15s}
 .setup-save:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-
-.redirect-info{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--r);padding:14px 16px;max-width:420px;width:100%;font-size:12px;color:var(--amber);line-height:1.7}
-.redirect-uri-box{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);padding:8px 12px;font-size:12px;color:var(--text);font-family:monospace;margin:8px 0;word-break:break-all;cursor:pointer;transition:.15s}
-.redirect-uri-box:hover{border-color:var(--accent)}
-.copy-hint{font-size:11px;color:var(--text3)}
+.uri-box{background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.2);border-radius:var(--r);padding:12px 14px;max-width:400px;width:100%;font-size:12px;color:var(--amber);line-height:1.7;display:none}
+.uri-val{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);padding:7px 11px;font-size:11px;color:var(--text);font-family:monospace;margin:6px 0;word-break:break-all;cursor:pointer;transition:.15s}
+.uri-val:hover{border-color:var(--accent)}
 
 /* APP */
 #appScreen{display:none;flex:1;flex-direction:column;overflow:hidden}
@@ -64,19 +62,25 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
 .app-body{display:flex;flex:1;overflow:hidden;height:calc(100vh - 52px)}
 
 /* SIDEBAR */
-.sidebar{width:230px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;flex-shrink:0}
-.sb-sec{padding:14px 14px 6px}
-.sb-lbl{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
-.acc-pill{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--border);margin-bottom:6px}
-.acc-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0}
+.sidebar{width:225px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;flex-shrink:0}
+.sb-sec{padding:13px 13px 5px}
+.sb-lbl{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--text3);margin-bottom:7px}
+.acc-pill{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--border);margin-bottom:5px}
+.acc-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
 .acc-name{font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .acc-email{font-size:10px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fi{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:var(--r2);cursor:pointer;transition:.12s;font-size:13px;color:var(--text2);margin-bottom:1px}
+.fi{display:flex;align-items:center;justify-content:space-between;padding:6px 9px;border-radius:var(--r2);cursor:pointer;transition:.12s;font-size:13px;color:var(--text2);margin-bottom:1px}
 .fi:hover{background:var(--bg3);color:var(--text)}
 .fi.active{background:var(--bg4);color:var(--text)}
-.fi-l{display:flex;align-items:center;gap:8px}
-.fi-dot{width:7px;height:7px;border-radius:50%}
-.fi-n{font-size:10px;padding:1px 7px;border-radius:10px;background:var(--bg4);color:var(--text3)}
+.fi-l{display:flex;align-items:center;gap:7px}
+.fi-dot{width:6px;height:6px;border-radius:50%}
+.fi-n{font-size:10px;padding:1px 6px;border-radius:10px;background:var(--bg4);color:var(--text3)}
+
+/* PROGRESS BAR */
+.sync-progress{padding:10px 13px;display:none}
+.sp-label{font-size:11px;color:var(--text2);margin-bottom:5px;display:flex;justify-content:space-between}
+.sp-track{height:4px;background:var(--bg4);border-radius:2px;overflow:hidden}
+.sp-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s}
 
 /* CONTENT */
 .content{flex:1;display:flex;flex-direction:column;overflow:hidden}
@@ -84,106 +88,119 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
 .view.active{display:flex}
 
 /* INBOX */
-.i-toolbar{padding:11px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);background:var(--bg2);flex-shrink:0}
-.i-search{flex:1;padding:7px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);font-size:13px;outline:none;transition:.15s}
+.i-toolbar{padding:10px 15px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border);background:var(--bg2);flex-shrink:0}
+.i-search{flex:1;padding:7px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);font-size:13px;outline:none;transition:.15s}
 .i-search:focus{border-color:var(--accent)}
 .i-search::placeholder{color:var(--text3)}
-.ai-btn{padding:7px 13px;background:var(--accent);border:none;border-radius:var(--r2);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.tsel{padding:6px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);font-size:12px;outline:none;cursor:pointer}
+.ai-btn{padding:6px 12px;background:var(--accent);border:none;border-radius:var(--r2);color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:.15s;white-space:nowrap}
 .ai-btn:hover{background:var(--accent2)}
+
 .i-body{flex:1;display:flex;overflow:hidden}
-.elist{width:350px;border-right:1px solid var(--border);overflow-y:auto;flex-shrink:0}
-.eitem{padding:12px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
+.elist{width:340px;border-right:1px solid var(--border);overflow-y:auto;flex-shrink:0}
+.eitem{padding:11px 13px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
 .eitem:hover{background:var(--bg3)}
 .eitem.sel{background:rgba(59,130,246,.1);border-left:2px solid var(--accent)}
-.em-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3px}
+.em-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px}
 .em-from{font-size:13px;font-weight:600}
-.em-date{font-size:11px;color:var(--text3);flex-shrink:0;margin-left:6px}
-.em-subj{font-size:12px;color:var(--text2);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.em-date{font-size:11px;color:var(--text3);flex-shrink:0;margin-left:5px}
+.em-subj{font-size:12px;color:var(--text2);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .em-prev{font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .em-tags{display:flex;gap:3px;margin-top:5px;flex-wrap:wrap}
-.tag{font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px}
+.tag{font-size:10px;font-weight:600;padding:2px 5px;border-radius:3px}
 .tag-confirmed{background:rgba(34,197,94,.15);color:var(--green)}
 .tag-pending{background:rgba(245,158,11,.15);color:var(--amber)}
 .tag-followup{background:rgba(239,68,68,.15);color:var(--red)}
 .tag-inquiry{background:rgba(59,130,246,.15);color:var(--accent)}
 .tag-quote{background:rgba(168,85,247,.15);color:var(--purple)}
-.tag-spam{background:rgba(74,85,117,.2);color:var(--text3)}
 
 /* DETAIL */
-.edetail{flex:1;overflow-y:auto;padding:20px 24px}
+.edetail{flex:1;overflow-y:auto;padding:18px 22px}
 .empty-d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text3);gap:10px;font-size:13px}
-.d-subj{font-size:17px;font-weight:600;margin-bottom:11px;line-height:1.3}
-.d-hdr{padding-bottom:13px;border-bottom:1px solid var(--border);margin-bottom:13px}
+.d-subj{font-size:16px;font-weight:600;margin-bottom:10px;line-height:1.3}
+.d-hdr{padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px}
 .d-meta{display:flex;justify-content:space-between;align-items:flex-start}
 .d-from{font-size:13px;font-weight:500}
 .d-addr{font-size:12px;color:var(--text2);margin-top:2px}
 .d-date{font-size:11px;color:var(--text3)}
-.ai-box{background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);border-radius:var(--r);padding:14px 16px;margin:13px 0}
-.ai-hdr{display:flex;align-items:center;gap:7px;margin-bottom:11px}
+.ai-box{background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);border-radius:var(--r);padding:13px 15px;margin:12px 0}
+.ai-hdr{display:flex;align-items:center;gap:6px;margin-bottom:10px}
 .ai-title{font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
-.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:11px}
-.ai-f label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:3px}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px}
+.ai-f label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:2px}
 .ai-f .val{font-size:13px;color:var(--text);font-weight:500}
 .ai-sum{font-size:13px;color:var(--text2);line-height:1.6}
-.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
-.chip{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid transparent;transition:.15s}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.chip{padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid transparent;transition:.15s}
 .c-conf{background:rgba(34,197,94,.15);color:var(--green)}.c-conf.on{border-color:var(--green);background:rgba(34,197,94,.25)}
 .c-pend{background:rgba(245,158,11,.15);color:var(--amber)}.c-pend.on{border-color:var(--amber);background:rgba(245,158,11,.25)}
 .c-fu{background:rgba(239,68,68,.15);color:var(--red)}.c-fu.on{border-color:var(--red);background:rgba(239,68,68,.25)}
 .c-q{background:rgba(168,85,247,.15);color:var(--purple)}.c-q.on{border-color:var(--purple);background:rgba(168,85,247,.25)}
-.e-body{font-size:13px;line-height:1.8;color:var(--text2);margin-top:13px;white-space:pre-wrap}
-.note-area{margin-top:13px;padding:12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r)}
-.note-lbl{font-size:10px;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
-.note-input{width:100%;padding:7px 10px;background:var(--bg4);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);font-size:13px;resize:vertical;min-height:60px;outline:none;font-family:inherit;transition:.15s}
+.e-body{font-size:13px;line-height:1.8;color:var(--text2);margin-top:12px;white-space:pre-wrap}
+.note-area{margin-top:12px;padding:11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r)}
+.note-lbl{font-size:10px;color:var(--text3);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.note-input{width:100%;padding:7px 9px;background:var(--bg4);border:1px solid var(--border);border-radius:var(--r2);color:var(--text);font-size:13px;resize:vertical;min-height:58px;outline:none;font-family:inherit;transition:.15s}
 .note-input:focus{border-color:var(--accent)}
-.note-save{margin-top:7px;padding:6px 13px;background:var(--accent);border:none;border-radius:var(--r2);color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
+.note-save{margin-top:6px;padding:5px 12px;background:var(--accent);border:none;border-radius:var(--r2);color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
 .note-save:hover{background:var(--accent2)}
-.act-bar{display:flex;gap:7px;margin-top:13px;padding-top:13px;border-top:1px solid var(--border)}
-.act{padding:7px 14px;border-radius:var(--r2);font-size:13px;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text);transition:.15s}
+.act-bar{display:flex;gap:6px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.act{padding:6px 13px;border-radius:var(--r2);font-size:12px;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text);transition:.15s}
 .act:hover{background:var(--bg4)}
 .act.p{background:var(--accent);border-color:var(--accent);color:#fff}
 .act.p:hover{background:var(--accent2)}
 
 /* DASHBOARD */
-.dash{padding:20px;overflow-y:auto;flex:1}
-.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
-.kpi{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:15px 17px}
-.kpi-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.kpi-val{font-size:24px;font-weight:700;line-height:1;margin-bottom:3px}
+.dash{padding:18px;overflow-y:auto;flex:1}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.kpi{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+.kpi-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.kpi-val{font-size:22px;font-weight:700;line-height:1;margin-bottom:3px}
 .kpi-sub{font-size:11px;color:var(--text3)}
 .kpi-b{color:var(--accent)}.kpi-g{color:var(--green)}.kpi-a{color:var(--amber)}.kpi-r{color:var(--red)}
-.dash-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.dc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:15px 17px}
-.dc-t{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:12px}
-.br{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.dash-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.dc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+.dc-t{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:11px}
+.br{display:flex;align-items:center;gap:7px;margin-bottom:7px}
 .bl{font-size:11px;color:var(--text2);width:80px;flex-shrink:0}
-.bt{flex:1;height:7px;background:var(--bg4);border-radius:4px;overflow:hidden}
-.bf{height:100%;border-radius:4px;transition:width .5s}
+.bt{flex:1;height:6px;background:var(--bg4);border-radius:3px;overflow:hidden}
+.bf{height:100%;border-radius:3px;transition:width .5s}
 .bn{font-size:11px;color:var(--text3);width:22px;text-align:right;flex-shrink:0}
 
+/* YEAR CHART */
+.year-tabs{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap}
+.ytab{padding:3px 10px;border-radius:10px;font-size:11px;cursor:pointer;border:1px solid var(--border2);background:transparent;color:var(--text2);transition:.15s}
+.ytab:hover{border-color:var(--accent);color:var(--accent)}
+.ytab.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
 /* PENDING */
-.pend{padding:18px;overflow-y:auto;flex:1}
-.p-hdr{display:flex;align-items:center;gap:8px;margin-bottom:13px}
-.pf{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:transparent;color:var(--text2);transition:.15s}
+.pend{padding:16px;overflow-y:auto;flex:1}
+.p-hdr{display:flex;align-items:center;gap:7px;margin-bottom:12px;flex-wrap:wrap}
+.pf{padding:4px 11px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:transparent;color:var(--text2);transition:.15s}
 .pf:hover{border-color:var(--accent);color:var(--accent)}
 .pf.active{background:var(--accent);border-color:var(--accent);color:#fff}
 .pt{width:100%;border-collapse:collapse}
-.pt th{padding:8px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);border-bottom:1px solid var(--border)}
-.pt td{padding:10px 12px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:top}
+.pt th{padding:7px 11px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);border-bottom:1px solid var(--border)}
+.pt td{padding:9px 11px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:top}
 .pt tr:hover td{background:var(--bg3);cursor:pointer}
-.ud{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}
+.ud{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px}
 .u-h{background:var(--red)}.u-m{background:var(--amber)}.u-l{background:var(--text3)}
 .db{font-size:11px;padding:2px 7px;border-radius:10px}
 .dc2{background:rgba(239,68,68,.15);color:var(--red)}.dw{background:rgba(245,158,11,.15);color:var(--amber)}.dok{background:rgba(34,197,94,.15);color:var(--green)}
-.qc{padding:4px 9px;background:transparent;border:1px solid var(--border2);border-radius:var(--r2);color:var(--text2);font-size:11px;cursor:pointer;transition:.15s}
+.qc{padding:3px 8px;background:transparent;border:1px solid var(--border2);border-radius:var(--r2);color:var(--text2);font-size:11px;cursor:pointer;transition:.15s}
 .qc:hover{background:var(--green);border-color:var(--green);color:#fff}
 
 /* MISC */
-.spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
+.spinner{width:13px;height:13px;border:2px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
-.overlay{position:fixed;inset:0;background:rgba(13,17,23,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:500;gap:14px;font-size:13px;color:var(--text2)}
+.overlay{position:fixed;inset:0;background:rgba(13,17,23,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:500;gap:14px}
 .overlay.h{display:none}
-.toast{position:fixed;bottom:20px;right:20px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:10px 16px;font-size:13px;color:var(--text);z-index:2000;opacity:0;transform:translateY(8px);transition:all .25s;pointer-events:none}
+.ov-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:28px 36px;text-align:center;min-width:300px}
+.ov-title{font-size:14px;font-weight:600;margin-bottom:8px}
+.ov-sub{font-size:12px;color:var(--text2);margin-bottom:16px}
+.ov-prog-track{height:6px;background:var(--bg4);border-radius:3px;overflow:hidden;margin-bottom:8px}
+.ov-prog-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .3s}
+.ov-stat{font-size:11px;color:var(--text3)}
+.toast{position:fixed;bottom:18px;right:18px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:9px 15px;font-size:13px;color:var(--text);z-index:2000;opacity:0;transform:translateY(8px);transition:all .25s;pointer-events:none}
 .toast.show{opacity:1;transform:translateY(0)}
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -192,14 +209,19 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
 </head>
 <body>
 
+<!-- OVERLAY -->
 <div class="overlay h" id="ov">
-  <div class="spinner" style="width:26px;height:26px;border-width:3px"></div>
-  <div id="ovMsg">처리 중...</div>
+  <div class="ov-card">
+    <div class="ov-title" id="ovTitle">처리 중...</div>
+    <div class="ov-sub" id="ovSub"></div>
+    <div class="ov-prog-track"><div class="ov-prog-fill" id="ovProg" style="width:0%"></div></div>
+    <div class="ov-stat" id="ovStat"></div>
+  </div>
 </div>
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <div style="display:flex;align-items:center;gap:16px">
+  <div style="display:flex;align-items:center;gap:14px">
     <div class="logo">HYW <span>WorkEasy</span></div>
     <div class="nav-tabs" id="navTabs" style="display:none">
       <button class="nav-tab active" onclick="gv('inbox',this)">📨 받은메일</button>
@@ -209,9 +231,8 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
   </div>
   <div class="topbar-right">
     <div style="font-size:11px;color:var(--text3)" id="syncLbl"></div>
-    <button class="sync-btn" id="syncBtn" onclick="doSync()" style="display:none">
-      <span id="syncIco">↻</span> 동기화
-    </button>
+    <button class="history-btn" id="histBtn" onclick="syncHistory()" style="display:none">📅 과거 이메일 불러오기</button>
+    <button class="sync-btn" id="syncBtn" onclick="doSync()" style="display:none"><span id="syncIco">↻</span> 동기화</button>
     <div class="user-badge" id="uBadge" style="display:none" onclick="signOut()">
       <div class="user-avatar" id="uAv">?</div>
       <span id="uName" style="font-size:12px;color:var(--text2)"></span>
@@ -222,41 +243,26 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
 
 <!-- LOGIN -->
 <div id="loginScreen">
-
   <div class="setup-card">
     <div class="setup-title">⚙️ Azure 앱 설정</div>
-    <div class="setup-row">
-      <label>Client ID</label>
-      <input class="setup-input" id="cfgCid" placeholder="98c5e35e-...">
-    </div>
-    <div class="setup-row">
-      <label>Tenant ID</label>
-      <input class="setup-input" id="cfgTid" placeholder="9c8bfc61-...">
-    </div>
+    <div class="setup-row"><label>Client ID</label><input class="setup-input" id="cfgCid" placeholder="98c5e35e-..."></div>
+    <div class="setup-row"><label>Tenant ID</label><input class="setup-input" id="cfgTid" placeholder="9c8bfc61-..."></div>
     <button class="setup-save" onclick="saveConfig()">저장</button>
   </div>
-
-  <!-- Redirect URI 안내 -->
-  <div class="redirect-info" id="redirectBox" style="display:none">
-    <strong>⚠️ Azure에 아래 Redirect URI를 등록해야 합니다</strong><br>
-    Authentication → Add Redirect URI → Single-page application (SPA)<br>
-    <div class="redirect-uri-box" id="redirectUriBox" onclick="copyUri()"></div>
-    <div class="copy-hint">클릭하면 복사됩니다</div>
+  <div class="uri-box" id="uriBox">
+    <strong>⚠️ Azure Redirect URI 등록 필요</strong><br>Authentication → SPA → Add Redirect URI
+    <div class="uri-val" id="uriVal" onclick="copyUri()"></div>
+    <span style="font-size:11px;color:var(--text3)">클릭하면 복사됩니다</span>
   </div>
-
   <div class="login-card">
     <div class="login-logo">HYW WorkEasy</div>
-    <div class="login-sub">
-      Microsoft 365 계정으로 로그인하면<br>
-      받은편지함을 자동으로 가져와 AI가 분류합니다
-    </div>
+    <div class="login-sub">Microsoft 365 로그인 후<br>AI가 실제 문의 이메일만 자동 분류합니다</div>
     <button class="ms-btn" id="loginBtn" onclick="signIn()">
-      <svg width="20" height="20" viewBox="0 0 21 21"><rect width="10" height="10" fill="#F25022"/><rect x="11" width="10" height="10" fill="#7FBA00"/><rect y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
+      <svg width="18" height="18" viewBox="0 0 21 21"><rect width="10" height="10" fill="#F25022"/><rect x="11" width="10" height="10" fill="#7FBA00"/><rect y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
       Microsoft 365로 로그인
     </button>
-    <div class="login-note" id="loginNote">설정을 저장하면 로그인 버튼이 활성화됩니다</div>
+    <div class="login-note" id="loginNote">설정 저장 후 로그인하세요</div>
   </div>
-
 </div>
 
 <!-- APP -->
@@ -267,43 +273,61 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
         <div class="sb-lbl">연결된 계정</div>
         <div id="accPills"></div>
       </div>
-      <div class="sb-sec" style="padding-bottom:16px">
+      <div class="sb-sec">
+        <div class="sb-lbl">기간</div>
+        <div id="yearStats" style="font-size:11px;color:var(--text3);line-height:1.8;padding:4px 2px"></div>
+      </div>
+      <div class="sb-sec" style="padding-bottom:14px">
         <div class="sb-lbl">필터</div>
-        <div class="fi active" onclick="setF('all',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--text3)"></div>전체</div><span class="fi-n" id="fc-all">0</span></div>
-        <div class="fi" onclick="setF('inquiry',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--accent)"></div>문의</div><span class="fi-n" id="fc-inquiry">0</span></div>
+        <div class="fi active" onclick="setF('all',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--text3)"></div>전체 문의</div><span class="fi-n" id="fc-all">0</span></div>
         <div class="fi" onclick="setF('confirmed',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--green)"></div>주문 확정</div><span class="fi-n" id="fc-confirmed">0</span></div>
         <div class="fi" onclick="setF('pending',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--amber)"></div>미확정</div><span class="fi-n" id="fc-pending">0</span></div>
         <div class="fi" onclick="setF('followup',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--red)"></div>Follow-up</div><span class="fi-n" id="fc-followup">0</span></div>
         <div class="fi" onclick="setF('quote',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--purple)"></div>견적 요청</div><span class="fi-n" id="fc-quote">0</span></div>
+        <div class="fi" onclick="setF('new',this)"><div class="fi-l"><div class="fi-dot" style="background:var(--teal)"></div>신규 고객</div><span class="fi-n" id="fc-new">0</span></div>
       </div>
     </div>
-    <div class="content">
 
+    <div class="content">
       <!-- INBOX -->
       <div class="view active" id="view-inbox">
         <div class="i-toolbar">
-          <input class="i-search" id="srch" placeholder="검색..." oninput="renderList()">
-          <button class="ai-btn" onclick="analyzeAll()">🤖 전체 AI 분석</button>
+          <input class="i-search" id="srch" placeholder="보낸사람, 제목, 내용 검색..." oninput="renderList()">
+          <select class="tsel" id="yearFilter" onchange="renderList()">
+            <option value="all">전체 연도</option>
+          </select>
+          <button class="ai-btn" onclick="analyzeAll()">🤖 AI 분석</button>
         </div>
         <div class="i-body">
           <div class="elist" id="elist"></div>
-          <div class="edetail" id="edetail"><div class="empty-d"><div style="font-size:36px;opacity:.3">📧</div><div>이메일을 선택하세요</div></div></div>
+          <div class="edetail" id="edetail"><div class="empty-d"><div style="font-size:32px;opacity:.3">📧</div><div>이메일을 선택하세요</div></div></div>
         </div>
       </div>
 
       <!-- DASHBOARD -->
       <div class="view" id="view-dashboard">
         <div class="dash">
-          <div style="font-size:15px;font-weight:600;margin-bottom:16px">📊 Inquiry 분석 대시보드</div>
+          <div style="font-size:15px;font-weight:600;margin-bottom:14px">📊 Inquiry 분석 대시보드</div>
           <div class="kpi-grid">
-            <div class="kpi"><div class="kpi-lbl">총 문의</div><div class="kpi-val kpi-b" id="k0">0</div><div class="kpi-sub">전체</div></div>
+            <div class="kpi"><div class="kpi-lbl">총 실제 문의</div><div class="kpi-val kpi-b" id="k0">0</div><div class="kpi-sub">광고/자동 제외</div></div>
             <div class="kpi"><div class="kpi-lbl">주문 확정</div><div class="kpi-val kpi-g" id="k1">0</div><div class="kpi-sub" id="k1s">전환율 0%</div></div>
             <div class="kpi"><div class="kpi-lbl">미확정</div><div class="kpi-val kpi-a" id="k2">0</div><div class="kpi-sub">관리 필요</div></div>
-            <div class="kpi"><div class="kpi-lbl">Follow-up</div><div class="kpi-val kpi-r" id="k3">0</div><div class="kpi-sub">즉시 대응</div></div>
+            <div class="kpi"><div class="kpi-lbl">신규 고객</div><div class="kpi-val kpi-r" id="k3">0</div><div class="kpi-sub">첫 문의</div></div>
           </div>
           <div class="dash-row">
-            <div class="dc"><div class="dc-t">카테고리별</div><div id="catBars"></div></div>
-            <div class="dc"><div class="dc-t">최근 14일 추이</div><canvas id="tc" height="145"></canvas></div>
+            <div class="dc">
+              <div class="dc-t">제품 카테고리별 문의</div>
+              <div id="catBars"></div>
+            </div>
+            <div class="dc">
+              <div class="dc-t">연도별 추이</div>
+              <div class="year-tabs" id="yearTabs"></div>
+              <canvas id="tc" height="130"></canvas>
+            </div>
+          </div>
+          <div class="dc" style="margin-bottom:12px">
+            <div class="dc-t">주요 고객사 문의 현황</div>
+            <div id="topCustomers"></div>
           </div>
         </div>
       </div>
@@ -312,19 +336,19 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
       <div class="view" id="view-pending">
         <div class="pend">
           <div class="p-hdr">
-            <div style="font-size:14px;font-weight:600;flex:1">⏳ 미확정 관리</div>
+            <div style="font-size:14px;font-weight:600;flex:1">⏳ 미확정 Inquiry 관리</div>
             <button class="pf active" onclick="setPF('all',this)">전체</button>
             <button class="pf" onclick="setPF('urgent',this)">🔴 긴급</button>
             <button class="pf" onclick="setPF('followup',this)">Follow-up</button>
             <button class="pf" onclick="setPF('quote',this)">견적</button>
+            <button class="pf" onclick="setPF('new',this)">신규</button>
           </div>
           <table class="pt">
-            <thead><tr><th>긴급도</th><th>보낸사람</th><th>제목</th><th>카테고리</th><th>수신일</th><th>경과</th><th>상태</th><th>처리</th></tr></thead>
+            <thead><tr><th>긴급도</th><th>보낸사람/회사</th><th>제목</th><th>카테고리</th><th>수신일</th><th>경과</th><th>상태</th><th>처리</th></tr></thead>
             <tbody id="pbody"></tbody>
           </table>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -332,324 +356,516 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
 <div class="toast" id="toast"></div>
 
 <script>
+// ── SPAM / AUTO-EMAIL DETECTION ─────────────────────────────
+// 광고, 자동발송, 프랜차이즈 대기업 필터링
+const SPAM_DOMAINS = [
+  'amazon.com','amazon-seller.com','ebay.com','walmart.com','aliexpress.com',
+  'shopify.com','etsy.com','paypal.com','stripe.com','fedex.com','ups.com',
+  'usps.com','dhl.com','noreply','no-reply','donotreply','notifications@',
+  'newsletter','marketing','promo','offers','deals','unsubscribe',
+  'mailer','sendgrid','mailchimp','constantcontact','hubspot','salesforce',
+  'linkedin.com','facebook.com','twitter.com','instagram.com','google.com',
+  'microsoft.com','apple.com','adobe.com','intuit.com','quickbooks',
+  'grainger.com','mcmaster.com','fastenal.com','hdSupply','globalindustrial',
+  'zoro.com','uline.com','staples.com','officedepot.com',
+  'autoconfirm','auto-confirm','order-confirm','receipt@','billing@',
+  'support@','helpdesk@','noreply@','bounce@','postmaster@',
+];
+
+const SPAM_SUBJECT_PATTERNS = [
+  /unsubscribe/i,/click here/i,/limited time/i,/special offer/i,
+  /congratulations/i,/you.ve been selected/i,/act now/i,
+  /\[invoice\]/i,/payment receipt/i,/order confirmation/i,
+  /shipment notification/i,/tracking number/i,/your package/i,
+  /account statement/i,/security alert/i,/verify your/i,
+  /password reset/i,/automatic reply/i,/out of office/i,
+  /delivery notification/i,/do not reply/i,/automated message/i,
+  /system notification/i,/alert:/i,/notice:/i,
+  /RE: RE: RE:/i, // 너무 많이 reply된 이메일
+];
+
+const SPAM_BODY_PATTERNS = [
+  /this is an automated/i,/auto-generated/i,/do not reply to this/i,
+  /to unsubscribe/i,/click to unsubscribe/i,/manage your preferences/i,
+  /view in browser/i,/having trouble viewing/i,/powered by/i,
+  /©\s*\d{4}/,/all rights reserved/i,/privacy policy/i,
+  /you are receiving this/i,/was sent to you because/i,
+];
+
+function isSpamEmail(email) {
+  const fromLower = (email.email || '').toLowerCase();
+  const subjectLower = (email.subject || '').toLowerCase();
+  const bodyLower = (email.body || '').toLowerCase().slice(0, 500);
+
+  // 도메인 체크
+  for (const d of SPAM_DOMAINS) {
+    if (fromLower.includes(d)) return true;
+  }
+
+  // 제목 패턴 체크
+  for (const p of SPAM_SUBJECT_PATTERNS) {
+    if (p.test(email.subject)) return true;
+  }
+
+  // 본문 패턴 체크 (3개 이상 매칭시 스팸)
+  let bodyMatches = 0;
+  for (const p of SPAM_BODY_PATTERNS) {
+    if (p.test(bodyLower)) bodyMatches++;
+    if (bodyMatches >= 2) return true;
+  }
+
+  // 본문이 너무 짧거나 없으면 자동발송 의심
+  const bodyText = email.body.replace(/\s/g,'');
+  if (bodyText.length < 30) return true;
+
+  return false;
+}
+
+// 실제 사람이 쓴 문의 이메일인지 판단
+function isRealInquiry(email) {
+  if (isSpamEmail(email)) return false;
+
+  const body = email.body || '';
+  const subject = email.subject || '';
+
+  // 최소 본문 길이 (실제 문의는 보통 50자 이상)
+  if (body.replace(/\s/g,'').length < 50) return false;
+
+  // 웰딩/산업 관련 키워드가 있으면 높은 확률로 실제 문의
+  const industryKeywords = [
+    'weld','wire','rope','caster','electrode','mig','tig','flux',
+    'quote','price','pricing','order','purchase','buy','availability',
+    'inquiry','question','interested','need','looking for','stock',
+    'lb','spool','rod','stainless','carbon','nickel','aluminum',
+    'delivery','shipping','lead time','net 30','invoice','po ',
+    'project','fabricat','manufactur','construct','industrial',
+    'wheel','swivel','locking','capacity','diameter','gauge',
+  ];
+
+  const bodyLower = body.toLowerCase();
+  const subjLower = subject.toLowerCase();
+  const combined = bodyLower + ' ' + subjLower;
+
+  let kwCount = 0;
+  for (const kw of industryKeywords) {
+    if (combined.includes(kw)) kwCount++;
+  }
+
+  // 업계 키워드 2개 이상이면 실제 문의
+  if (kwCount >= 2) return true;
+
+  // 키워드 없어도 실제 질문/문의 형태면 포함
+  const questionMarkers = [
+    /\?/, /please/i, /could you/i, /can you/i, /do you/i,
+    /how much/i, /what is/i, /looking for/i, /need/i, /want/i,
+  ];
+  let qCount = 0;
+  for (const q of questionMarkers) {
+    if (q.test(combined)) qCount++;
+  }
+  if (qCount >= 3) return true;
+
+  return false;
+}
+
 // ── STATE ──────────────────────────────────────────────────
 const S = {
   emails:[], sel:null, filter:'all', pf:'all',
   notes:{}, msalInst:null, account:null, tc:null,
-  cfg:{ cid:'', tid:'' }
+  cfg:{ cid:'98c5e35e-a8d1-48a2-9d67-cce4be966977', tid:'9c8bfc61-b161-4214-9540-f5b66f8b2a7c' },
+  syncing:false, selectedYear:'all',
 };
+const SCOPES=['Mail.Read','Mail.ReadWrite','Mail.Send','User.Read'];
 
-const SCOPES = ['Mail.Read','Mail.ReadWrite','Mail.Send','User.Read'];
-
-// ── INIT ───────────────────────────────────────────────────
-window.onload = () => {
+window.onload=()=>{
   load();
-  // Pre-fill known values
-  document.getElementById('cfgCid').value = S.cfg.cid || '98c5e35e-a8d1-48a2-9d67-cce4be966977';
-  document.getElementById('cfgTid').value = S.cfg.tid || '9c8bfc61-b161-4214-9540-f5b66f8b2a7c';
-  if (S.cfg.cid && S.cfg.tid) initMsal(true);
-  else showRedirectUri();
+  document.getElementById('cfgCid').value=S.cfg.cid;
+  document.getElementById('cfgTid').value=S.cfg.tid;
+  if(S.cfg.cid&&S.cfg.tid) initMsal(true);
+  else showUri();
 };
 
-function load() {
-  try {
-    const c = localStorage.getItem('hyw3_cfg'); if(c) S.cfg = {...S.cfg,...JSON.parse(c)};
-    const e = localStorage.getItem('hyw3_emails'); if(e) S.emails = JSON.parse(e);
-    const n = localStorage.getItem('hyw3_notes'); if(n) S.notes = JSON.parse(n);
-  } catch(e){}
+function load(){
+  try{
+    const c=localStorage.getItem('hyw4_cfg');if(c)S.cfg={...S.cfg,...JSON.parse(c)};
+    const e=localStorage.getItem('hyw4_emails');if(e)S.emails=JSON.parse(e);
+    const n=localStorage.getItem('hyw4_notes');if(n)S.notes=JSON.parse(n);
+  }catch(e){}
 }
-function save() {
-  localStorage.setItem('hyw3_cfg', JSON.stringify(S.cfg));
-  localStorage.setItem('hyw3_emails', JSON.stringify(S.emails));
-  localStorage.setItem('hyw3_notes', JSON.stringify(S.notes));
-}
-
-function getCurrentFileUri() {
-  // Get the current page URL to use as redirect URI
-  const url = window.location.href.split('#')[0].split('?')[0];
-  return url;
+function save(){
+  localStorage.setItem('hyw4_cfg',JSON.stringify(S.cfg));
+  localStorage.setItem('hyw4_emails',JSON.stringify(S.emails));
+  localStorage.setItem('hyw4_notes',JSON.stringify(S.notes));
 }
 
-function showRedirectUri() {
-  const uri = getCurrentFileUri();
-  const box = document.getElementById('redirectBox');
-  const uriBox = document.getElementById('redirectUriBox');
-  box.style.display = 'block';
-  uriBox.textContent = uri;
+function pageUri(){return window.location.href.split('#')[0].split('?')[0];}
+function showUri(){
+  const b=document.getElementById('uriBox');
+  b.style.display='block';
+  document.getElementById('uriVal').textContent=pageUri();
+}
+function copyUri(){
+  navigator.clipboard.writeText(pageUri())
+    .then(()=>toast('✓ URI 복사됨!'))
+    .catch(()=>prompt('복사하세요:',pageUri()));
 }
 
-function copyUri() {
-  const uri = getCurrentFileUri();
-  navigator.clipboard.writeText(uri).then(() => toast('✓ URI 복사됨! Azure에 붙여넣으세요.')).catch(() => {
-    prompt('아래 URI를 복사하세요:', uri);
-  });
-}
-
-function saveConfig() {
-  S.cfg.cid = document.getElementById('cfgCid').value.trim();
-  S.cfg.tid = document.getElementById('cfgTid').value.trim();
-  if (!S.cfg.cid || !S.cfg.tid) { toast('두 값을 모두 입력해주세요.'); return; }
-  save();
-  showRedirectUri();
-  initMsal(false);
-  toast('✓ 저장됨');
+function saveConfig(){
+  S.cfg.cid=document.getElementById('cfgCid').value.trim();
+  S.cfg.tid=document.getElementById('cfgTid').value.trim();
+  if(!S.cfg.cid||!S.cfg.tid){toast('두 값을 입력해주세요.');return;}
+  save();showUri();initMsal(false);toast('✓ 저장됨');
 }
 
 // ── MSAL ───────────────────────────────────────────────────
-function initMsal(autoCheck) {
-  const cfg = {
-    auth: {
-      clientId: S.cfg.cid,
-      authority: `https://login.microsoftonline.com/${S.cfg.tid}`,
-      redirectUri: getCurrentFileUri(),
-      navigateToLoginRequestUrl: true,
-    },
-    cache: { cacheLocation:'localStorage', storeAuthStateInCookie:true }
+function initMsal(autoCheck){
+  const cfg={
+    auth:{clientId:S.cfg.cid,authority:`https://login.microsoftonline.com/${S.cfg.tid}`,redirectUri:pageUri(),navigateToLoginRequestUrl:true},
+    cache:{cacheLocation:'localStorage',storeAuthStateInCookie:true}
   };
-  try {
-    S.msalInst = new msal.PublicClientApplication(cfg);
-    S.msalInst.initialize().then(() => {
-      // Handle redirect response (when coming back from Microsoft login)
-      S.msalInst.handleRedirectPromise().then(resp => {
-        if (resp && resp.account) {
-          onLogin(resp);
-        } else if (autoCheck) {
-          const accs = S.msalInst.getAllAccounts();
-          if (accs.length > 0) { S.account = accs[0]; showApp(); }
+  try{
+    S.msalInst=new msal.PublicClientApplication(cfg);
+    S.msalInst.initialize().then(()=>{
+      S.msalInst.handleRedirectPromise().then(resp=>{
+        if(resp&&resp.account){onLogin(resp);}
+        else if(autoCheck){
+          const accs=S.msalInst.getAllAccounts();
+          if(accs.length>0){S.account=accs[0];showApp();}
         }
-      }).catch(e => toast('인증 오류: ' + e.message));
+      }).catch(e=>toast('인증 오류: '+e.message));
     });
-    document.getElementById('loginBtn').disabled = false;
-    document.getElementById('loginNote').textContent = 'charles@hywproducts.com 으로 로그인하세요';
-  } catch(e) { toast('초기화 오류: ' + e.message); }
+    document.getElementById('loginNote').textContent='charles@hywproducts.com 으로 로그인하세요';
+  }catch(e){toast('초기화 오류: '+e.message);}
 }
 
-async function signIn() {
-  if (!S.msalInst) { toast('먼저 설정을 저장해주세요.'); return; }
-
-  // ⚠️ file:// 환경에서는 redirect 방식만 작동합니다
-  try {
-    await S.msalInst.loginRedirect({ scopes: SCOPES });
-    // 페이지가 Microsoft 로그인 페이지로 이동합니다
-    // 로그인 후 이 페이지로 돌아오면 handleRedirectPromise가 처리합니다
-  } catch(e) {
-    toast('로그인 오류: ' + (e.message || e.errorCode));
-  }
+async function signIn(){
+  if(!S.msalInst){toast('먼저 설정을 저장해주세요.');return;}
+  try{await S.msalInst.loginRedirect({scopes:SCOPES});}
+  catch(e){toast('로그인 오류: '+(e.message||e.errorCode));}
 }
 
-function onLogin(resp) {
-  S.account = resp.account;
-  showApp();
-  doSync();
-}
+function onLogin(resp){S.account=resp.account;showApp();doSync();}
 
-function showApp() {
-  document.getElementById('loginScreen').style.display = 'none';
-  const app = document.getElementById('appScreen');
-  app.classList.add('on');
-  document.getElementById('navTabs').style.display = 'flex';
-  document.getElementById('syncBtn').style.display = 'flex';
-  document.getElementById('uBadge').style.display = 'flex';
-  const name = S.account.name || S.account.username;
-  const ini = name.split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
-  document.getElementById('uAv').textContent = ini;
-  document.getElementById('uName').textContent = name;
-  document.getElementById('accPills').innerHTML = `
-    <div class="acc-pill">
-      <div class="acc-dot"></div>
-      <div><div class="acc-name">${esc(name)}</div><div class="acc-email">${esc(S.account.username)}</div></div>
-    </div>`;
+function showApp(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('appScreen').classList.add('on');
+  document.getElementById('navTabs').style.display='flex';
+  document.getElementById('syncBtn').style.display='flex';
+  document.getElementById('histBtn').style.display='flex';
+  document.getElementById('uBadge').style.display='flex';
+  const name=S.account.name||S.account.username;
+  const ini=name.split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('uAv').textContent=ini;
+  document.getElementById('uName').textContent=name;
+  document.getElementById('accPills').innerHTML=`<div class="acc-pill"><div class="acc-dot"></div><div><div class="acc-name">${esc(name)}</div><div class="acc-email">${esc(S.account.username)}</div></div></div>`;
   renderAll();
 }
 
-function signOut() {
-  S.msalInst.logoutRedirect({ account: S.account });
+function signOut(){S.msalInst.logoutRedirect({account:S.account});}
+
+async function getToken(){
+  if(!S.msalInst||!S.account)throw new Error('로그인 필요');
+  try{const r=await S.msalInst.acquireTokenSilent({scopes:SCOPES,account:S.account});return r.accessToken;}
+  catch(e){await S.msalInst.acquireTokenRedirect({scopes:SCOPES});}
 }
 
-async function getToken() {
-  if (!S.msalInst || !S.account) throw new Error('로그인 필요');
-  try {
-    const r = await S.msalInst.acquireTokenSilent({ scopes: SCOPES, account: S.account });
-    return r.accessToken;
-  } catch(e) {
-    await S.msalInst.acquireTokenRedirect({ scopes: SCOPES });
-  }
-}
-
-// ── SYNC ───────────────────────────────────────────────────
-async function doSync() {
-  const btn = document.getElementById('syncBtn');
-  document.getElementById('syncIco').innerHTML = '<span class="spinner"></span>';
-  showOv('Microsoft 365에서 이메일 가져오는 중...');
-  try {
-    const token = await getToken();
-    if (!token) return; // redirect 중
-
-    const res = await fetch(
-      'https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messages' +
-      '?$top=100&$orderby=receivedDateTime desc' +
-      '&$select=id,subject,from,receivedDateTime,body,isRead',
-      { headers: { Authorization: 'Bearer ' + token } }
-    );
-    if (!res.ok) throw new Error(`오류 ${res.status}: ${await res.text()}`);
-    const data = await res.json();
-
-    let nc = 0;
-    for (const m of data.value || []) {
-      if (S.emails.find(e => e.id === m.id)) continue;
-      const body = (m.body?.content||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
-      S.emails.unshift({
-        id:m.id, from:m.from?.emailAddress?.name||'',
-        email:m.from?.emailAddress?.address||'',
-        subject:m.subject||'(제목 없음)', body:body.slice(0,2000),
-        date:m.receivedDateTime, status:'pending',
-        category:'미분류', products:[], urgency:'medium',
-        aiAnalyzed:false, aiSummary:'AI 분석 필요',
-        tags:['inquiry'], isRead:m.isRead
-      });
-      nc++;
-    }
-    save();
-    hideOv();
-    document.getElementById('syncLbl').textContent = '동기화: ' + new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});
-    document.getElementById('syncIco').textContent = '↻';
-    toast(`✓ ${nc}개 새 이메일 (총 ${S.emails.length}개)`);
+// ── SYNC (최근 이메일) ─────────────────────────────────────
+async function doSync(){
+  if(S.syncing)return;
+  S.syncing=true;
+  document.getElementById('syncIco').innerHTML='<span class="spinner"></span>';
+  showOv('최근 이메일 동기화 중...','받은편지함에서 불러오는 중',0,'');
+  try{
+    const token=await getToken();
+    if(!token)return;
+    const count=await fetchEmails(token,null,null,100);
+    save();hideOv();
+    document.getElementById('syncLbl').textContent='동기화: '+new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});
+    toast(`✓ ${count}개 신규 문의 이메일 추가`);
     renderAll();
-    if (nc > 0) analyzeNew();
-  } catch(e) {
-    hideOv();
-    document.getElementById('syncIco').textContent = '↻';
-    toast('동기화 실패: ' + e.message);
+    if(count>0)analyzeNew();
+  }catch(e){hideOv();toast('동기화 실패: '+e.message);}
+  finally{S.syncing=false;document.getElementById('syncIco').textContent='↻';}
+}
+
+// ── SYNC (과거 수년치) ──────────────────────────────────────
+async function syncHistory(){
+  if(S.syncing){toast('동기화 중입니다...');return;}
+  S.syncing=true;
+
+  showOv('과거 이메일 전체 분석 중','수년치 이메일을 불러오는 중입니다...',0,'최대 10-20분 소요될 수 있습니다');
+
+  try{
+    const token=await getToken();
+    if(!token)return;
+
+    // 연도별로 나눠서 가져오기 (API 제한 우회)
+    const currentYear=new Date().getFullYear();
+    const startYear=currentYear-5; // 최근 5년
+    let totalNew=0;
+
+    for(let year=currentYear;year>=startYear;year--){
+      const startDate=`${year}-01-01T00:00:00Z`;
+      const endDate=`${year}-12-31T23:59:59Z`;
+      const pct=Math.round((currentYear-year)/(currentYear-startYear)*100);
+
+      showOv(`${year}년 이메일 분석 중`,`실제 문의 이메일만 필터링합니다`,pct,`총 ${totalNew}개 실제 문의 발견`);
+
+      const count=await fetchEmails(token,startDate,endDate,500);
+      totalNew+=count;
+      await sleep(300);
+    }
+
+    save();hideOv();
+    toast(`✓ 과거 이메일 분석 완료! 실제 문의 ${totalNew}개 추가`);
+    renderAll();
+    analyzeNew();
+  }catch(e){hideOv();toast('오류: '+e.message);}
+  finally{S.syncing=false;}
+}
+
+async function fetchEmails(token,startDate,endDate,maxCount){
+  let url='https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messages?$top=50&$orderby=receivedDateTime desc&$select=id,subject,from,receivedDateTime,body,isRead';
+  if(startDate&&endDate){
+    url+=`&$filter=receivedDateTime ge ${startDate} and receivedDateTime le ${endDate}`;
   }
+
+  let newCount=0;
+  let fetched=0;
+  let nextLink=url;
+
+  while(nextLink&&fetched<maxCount){
+    const res=await fetch(nextLink,{headers:{Authorization:'Bearer '+token}});
+    if(!res.ok)break;
+    const data=await res.json();
+
+    for(const m of data.value||[]){
+      if(S.emails.find(e=>e.id===m.id))continue;
+
+      const body=(m.body?.content||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+      const candidate={
+        id:m.id,
+        from:m.from?.emailAddress?.name||'',
+        email:m.from?.emailAddress?.address||'',
+        subject:m.subject||'(제목 없음)',
+        body:body.slice(0,2000),
+        date:m.receivedDateTime,
+        status:'pending',
+        category:'미분류',products:[],urgency:'medium',
+        aiAnalyzed:false,aiSummary:'AI 분석 필요',
+        tags:['inquiry'],isRead:m.isRead,
+        isNewCustomer:false,
+      };
+
+      // 핵심: 실제 문의 이메일만 저장
+      if(isRealInquiry(candidate)){
+        S.emails.unshift(candidate);
+        newCount++;
+      }
+    }
+
+    fetched+=(data.value||[]).length;
+    nextLink=data['@odata.nextLink']||null;
+    await sleep(100); // API rate limit 방지
+  }
+
+  // 신규 고객 표시 (해당 이메일 도메인으로 처음 온 경우)
+  markNewCustomers();
+
+  return newCount;
 }
 
-// ── AI ─────────────────────────────────────────────────────
-async function analyzeNew() {
-  const un = S.emails.filter(e=>!e.aiAnalyzed).slice(0,20);
-  if (!un.length) return;
-  showOv(`AI 분석 중... (${un.length}개)`);
-  for (const e of un) { await aiEmail(e); await sleep(150); }
-  save(); hideOv(); renderAll(); toast('✓ AI 분석 완료');
+function markNewCustomers(){
+  const seen={};
+  const sorted=[...S.emails].sort((a,b)=>new Date(a.date)-new Date(b.date));
+  sorted.forEach(e=>{
+    const domain=e.email.split('@')[1]||e.email;
+    if(!seen[domain]){seen[domain]=true;e.isNewCustomer=true;}
+    else{e.isNewCustomer=false;}
+  });
 }
 
-async function analyzeAll() {
-  const un = S.emails.filter(e=>!e.aiAnalyzed);
-  if (!un.length) { toast('모두 분석됨'); return; }
-  showOv(`AI 분석 중... (${un.length}개)`);
-  for (const e of un) { await aiEmail(e); await sleep(150); }
-  save(); hideOv(); renderAll(); toast('✓ AI 분석 완료');
+// ── AI ANALYSIS ──────────────────────────────────────────
+async function analyzeNew(){
+  const un=S.emails.filter(e=>!e.aiAnalyzed).slice(0,30);
+  if(!un.length)return;
+  showOv('AI 분석 중',`${un.length}개 이메일 분류 중...`,0,'');
+  for(let i=0;i<un.length;i++){
+    await aiEmail(un[i]);
+    setOvProg(Math.round((i+1)/un.length*100),`${i+1}/${un.length} 완료`);
+    await sleep(120);
+  }
+  save();hideOv();renderAll();toast('✓ AI 분석 완료!');
 }
 
-async function aiEmail(obj) {
-  const p = `You are an email classifier for Hy-Weld Inc. (welding supplies, wire rope, casters).
+async function analyzeAll(){
+  const un=S.emails.filter(e=>!e.aiAnalyzed);
+  if(!un.length){toast('모두 분석됨');return;}
+  showOv('AI 전체 분석',`${un.length}개 이메일 분류 중...`,0,'');
+  for(let i=0;i<un.length;i++){
+    await aiEmail(un[i]);
+    setOvProg(Math.round((i+1)/un.length*100),`${i+1}/${un.length} 완료`);
+    await sleep(120);
+  }
+  save();hideOv();renderAll();toast('✓ AI 분석 완료!');
+}
+
+async function aiEmail(obj){
+  const p=`You are an email classifier for Hy-Weld Inc. (industrial welding supplies, wire rope, casters — Norcross, Georgia).
+
 Return ONLY valid JSON, no markdown:
-{"status":"confirmed"|"pending"|"followup"|"spam","category":"한글카테고리","products":["제품명"],"urgency":"high"|"medium"|"low","tags":["inquiry","confirmed","pending","followup","quote","spam"],"aiSummary":"2-3문장 한국어 요약"}
+{"status":"confirmed"|"pending"|"followup","category":"한글카테고리","products":["제품명"],"urgency":"high"|"medium"|"low","tags":["inquiry","confirmed","pending","followup","quote"],"aiSummary":"2-3문장 한국어 요약 및 필요 액션","customerType":"existing"|"new","estimatedValue":"low"|"medium"|"high"}
 
-confirmed=주문확정/PO번호, pending=문의만, followup=재문의/오래됨, spam=자동알림
-From:${obj.from}<${obj.email}> Subject:${obj.subject} Body:${obj.body.slice(0,500)}`;
-  try {
-    const r = await fetch('https://api.anthropic.com/v1/messages',{
+- confirmed: PO번호 포함, 명확한 주문 확정
+- pending: 문의 단계
+- followup: 재문의 or 3일 이상 경과
+
+From:${obj.from}<${obj.email}>
+Subject:${obj.subject}
+Body:${obj.body.slice(0,600)}`;
+
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:350,messages:[{role:'user',content:p}]})
     });
-    if(!r.ok) return;
-    const d = await r.json();
-    const t = d.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
-    const res = JSON.parse(t);
-    obj.status=res.status||'pending'; obj.category=res.category||'기타';
-    obj.products=res.products||[]; obj.urgency=res.urgency||'medium';
-    obj.tags=res.tags||['inquiry']; obj.aiSummary=res.aiSummary||'';
+    if(!r.ok)return;
+    const d=await r.json();
+    const t=d.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
+    const res=JSON.parse(t);
+    obj.status=res.status||'pending';obj.category=res.category||'기타';
+    obj.products=res.products||[];obj.urgency=res.urgency||'medium';
+    obj.tags=res.tags||['inquiry'];obj.aiSummary=res.aiSummary||'';
+    obj.customerType=res.customerType||'existing';
+    obj.estimatedValue=res.estimatedValue||'medium';
     obj.aiAnalyzed=true;
-  } catch(e){}
+  }catch(e){}
 }
 
 // ── VIEW ───────────────────────────────────────────────────
-function gv(v, el) {
+function gv(v,el){
   document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
   document.getElementById('view-'+v).classList.add('active');
   document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));
   el.classList.add('active');
-  if (v==='dashboard') setTimeout(updateDash,80);
-  if (v==='pending') renderPending();
+  if(v==='dashboard')setTimeout(updateDash,80);
+  if(v==='pending')renderPending();
 }
 
-function renderAll() { renderList(); updateCounts(); updateDash(); renderPending(); }
+function renderAll(){renderList();updateCounts();updateDash();renderPending();updateYearStats();}
 
-// ── EMAIL LIST ──────────────────────────────────────────────
-function getFiltered() {
-  const q = (document.getElementById('srch')?.value||'').toLowerCase();
-  return S.emails.filter(e => {
-    if (S.filter==='inquiry' && !e.tags.includes('inquiry')) return false;
-    if (S.filter==='confirmed' && e.status!=='confirmed') return false;
-    if (S.filter==='pending' && e.status!=='pending' && e.status!=='followup') return false;
-    if (S.filter==='followup' && !e.tags.includes('followup') && e.status!=='followup') return false;
-    if (S.filter==='quote' && !e.tags.includes('quote')) return false;
-    if (q) return [e.from,e.subject,e.body,e.email].some(x=>x.toLowerCase().includes(q));
+// ── EMAIL LIST ─────────────────────────────────────────────
+function getFiltered(){
+  const q=(document.getElementById('srch')?.value||'').toLowerCase();
+  const yr=document.getElementById('yearFilter')?.value||'all';
+  return S.emails.filter(e=>{
+    if(S.filter==='confirmed'&&e.status!=='confirmed')return false;
+    if(S.filter==='pending'&&e.status!=='pending'&&e.status!=='followup')return false;
+    if(S.filter==='followup'&&!e.tags.includes('followup')&&e.status!=='followup')return false;
+    if(S.filter==='quote'&&!e.tags.includes('quote'))return false;
+    if(S.filter==='new'&&!e.isNewCustomer)return false;
+    if(yr!=='all'&&new Date(e.date).getFullYear()!==parseInt(yr))return false;
+    if(q)return[e.from,e.subject,e.body,e.email].some(x=>x.toLowerCase().includes(q));
     return true;
   });
 }
 
-function renderList() {
-  const emails = getFiltered();
-  const el = document.getElementById('elist');
-  if (!el) return;
-  if (!emails.length) { el.innerHTML='<div style="padding:36px;text-align:center;color:var(--text3);font-size:13px">이메일 없음</div>'; return; }
-  el.innerHTML = emails.map(e => {
-    const d = new Date(e.date), now = new Date();
-    const ds = d.toDateString()===now.toDateString()
-      ? d.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})
-      : `${d.getMonth()+1}/${d.getDate()}`;
-    return `<div class="eitem ${S.sel===e.id?'sel':''}" onclick="selEmail('${e.id}')">
+function renderList(){
+  const emails=getFiltered();
+  const el=document.getElementById('elist');if(!el)return;
+  if(!emails.length){el.innerHTML='<div style="padding:32px;text-align:center;color:var(--text3);font-size:13px">이메일 없음</div>';return;}
+  el.innerHTML=emails.map(e=>{
+    const d=new Date(e.date),now=new Date();
+    const ds=d.toDateString()===now.toDateString()
+      ?d.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})
+      :`${d.getFullYear()}.${d.getMonth()+1}.${d.getDate()}`;
+    const newBadge=e.isNewCustomer?'<span class="tag" style="background:rgba(20,184,166,.15);color:var(--teal)">★ 신규</span>':'';
+    return`<div class="eitem ${S.sel===e.id?'sel':''}" onclick="selEmail('${e.id}')">
       <div class="em-top"><div class="em-from">${esc(e.from||e.email)}</div><div class="em-date">${ds}</div></div>
       <div class="em-subj">${esc(e.subject)}</div>
-      <div class="em-prev">${esc(e.body.slice(0,65))}</div>
-      <div class="em-tags">${e.tags.map(t=>`<span class="tag tag-${t}">${tlbl(t)}</span>`).join('')}</div>
+      <div class="em-prev">${esc(e.body.slice(0,60))}</div>
+      <div class="em-tags">${e.tags.map(t=>`<span class="tag tag-${t}">${tlbl(t)}</span>`).join('')}${newBadge}</div>
     </div>`;
   }).join('');
 }
 
-function tlbl(t){return{confirmed:'✓ 확정',pending:'○ 미확정',followup:'! Follow-up',inquiry:'문의',quote:'견적',spam:'기타'}[t]||t}
-function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function tlbl(t){return{confirmed:'✓ 확정',pending:'○ 미확정',followup:'! Follow-up',inquiry:'문의',quote:'견적'}[t]||t;}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-function setF(f,el){S.filter=f;S.sel=null;document.querySelectorAll('.fi').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderList();document.getElementById('edetail').innerHTML='<div class="empty-d"><div style="font-size:36px;opacity:.3">📧</div><div>이메일을 선택하세요</div></div>'}
+function setF(f,el){S.filter=f;S.sel=null;document.querySelectorAll('.fi').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderList();resetDetail();}
 
 function updateCounts(){
   const e=S.emails;
   document.getElementById('fc-all').textContent=e.length;
-  document.getElementById('fc-inquiry').textContent=e.filter(x=>x.tags.includes('inquiry')).length;
   document.getElementById('fc-confirmed').textContent=e.filter(x=>x.status==='confirmed').length;
   document.getElementById('fc-pending').textContent=e.filter(x=>x.status==='pending'||x.status==='followup').length;
   document.getElementById('fc-followup').textContent=e.filter(x=>x.tags.includes('followup')||x.status==='followup').length;
   document.getElementById('fc-quote').textContent=e.filter(x=>x.tags.includes('quote')).length;
+  document.getElementById('fc-new').textContent=e.filter(x=>x.isNewCustomer).length;
 }
 
+function updateYearStats(){
+  const years={};
+  S.emails.forEach(e=>{const y=new Date(e.date).getFullYear();years[y]=(years[y]||0)+1;});
+  const sorted=Object.entries(years).sort((a,b)=>b[0]-a[0]);
+
+  // Year filter dropdown
+  const sel=document.getElementById('yearFilter');
+  if(sel){
+    const cur=sel.value;
+    sel.innerHTML='<option value="all">전체 연도</option>'+sorted.map(([y,c])=>`<option value="${y}">${y}년 (${c}건)</option>`).join('');
+    sel.value=cur;
+  }
+
+  // Sidebar year stats
+  const ys=document.getElementById('yearStats');
+  if(ys)ys.innerHTML=sorted.map(([y,c])=>`<div>${y}년: <strong style="color:var(--accent)">${c}건</strong></div>`).join('');
+
+  // Dashboard year tabs
+  const yt=document.getElementById('yearTabs');
+  if(yt)yt.innerHTML='<button class="ytab active" onclick="selYear(\'all\',this)">전체</button>'+sorted.map(([y])=>`<button class="ytab" onclick="selYear('${y}',this)">${y}</button>`).join('');
+}
+
+function selYear(y,el){
+  S.selectedYear=y;
+  document.querySelectorAll('.ytab').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  updateTrendChart();
+}
+
+function resetDetail(){document.getElementById('edetail').innerHTML='<div class="empty-d"><div style="font-size:32px;opacity:.3">📧</div><div>이메일을 선택하세요</div></div>';}
+
 // ── DETAIL ─────────────────────────────────────────────────
-function selEmail(id) {
-  S.sel=id; renderList();
-  const e=S.emails.find(x=>x.id===id); if(!e) return;
+function selEmail(id){
+  S.sel=id;renderList();
+  const e=S.emails.find(x=>x.id===id);if(!e)return;
   const note=S.notes[id]||'';
+  const valColor={high:'var(--green)',medium:'var(--amber)',low:'var(--text3)'}[e.estimatedValue||'medium'];
   document.getElementById('edetail').innerHTML=`
     <div class="d-hdr">
       <div class="d-subj">${esc(e.subject)}</div>
       <div class="d-meta">
-        <div><div class="d-from">${esc(e.from)}</div><div class="d-addr">${esc(e.email)}</div></div>
+        <div>
+          <div class="d-from">${esc(e.from)} ${e.isNewCustomer?'<span style="font-size:10px;background:rgba(20,184,166,.15);color:var(--teal);padding:2px 7px;border-radius:4px;font-weight:600">★ 신규 고객</span>':''}</div>
+          <div class="d-addr">${esc(e.email)}</div>
+        </div>
         <div class="d-date">${new Date(e.date).toLocaleString('ko-KR')}</div>
       </div>
     </div>
     <div class="ai-box">
-      <div class="ai-hdr"><div style="width:17px;height:17px;background:var(--accent);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px">🤖</div><div class="ai-title">AI 분석</div>${!e.aiAnalyzed?'<span style="font-size:11px;color:var(--amber)">(미분석)</span>':''}</div>
+      <div class="ai-hdr"><div style="width:16px;height:16px;background:var(--accent);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px">🤖</div><div class="ai-title">AI 분석</div>${!e.aiAnalyzed?'<span style="font-size:11px;color:var(--amber)">(분석 필요)</span>':''}</div>
       <div class="ai-grid">
         <div class="ai-f"><label>카테고리</label><div class="val">${esc(e.category)}</div></div>
         <div class="ai-f"><label>긴급도</label><div class="val">${{high:'🔴 긴급',medium:'🟡 보통',low:'⚪ 낮음'}[e.urgency]||e.urgency}</div></div>
-        <div class="ai-f"><label>관련 제품</label><div class="val">${e.products.join(', ')||'—'}</div></div>
-        <div class="ai-f"><label>상태</label><div class="val">${{confirmed:'✅ 주문 확정',pending:'⏳ 미확정',followup:'🚨 Follow-up',spam:'🗑 기타'}[e.status]||e.status}</div></div>
+        <div class="ai-f"><label>관련 제품</label><div class="val">${(e.products||[]).join(', ')||'—'}</div></div>
+        <div class="ai-f"><label>예상 규모</label><div class="val" style="color:${valColor}">${{high:'💰 대형',medium:'💵 중형',low:'💴 소형'}[e.estimatedValue||'medium']}</div></div>
       </div>
-      <div class="ai-sum">${esc(e.aiSummary)}</div>
+      <div class="ai-sum">${esc(e.aiSummary||'AI 분석 버튼을 눌러주세요')}</div>
       <div class="chips">
-        <span class="chip c-conf ${e.status==='confirmed'?'on':''}" onclick="chgStatus('${id}','confirmed',this)">✓ 주문 확정</span>
-        <span class="chip c-pend ${e.status==='pending'?'on':''}" onclick="chgStatus('${id}','pending',this)">○ 미확정</span>
-        <span class="chip c-fu ${e.status==='followup'?'on':''}" onclick="chgStatus('${id}','followup',this)">! Follow-up</span>
-        <span class="chip c-q ${e.tags.includes('quote')?'on':''}" onclick="chgStatus('${id}','quote',this)">$ 견적</span>
+        <span class="chip c-conf ${e.status==='confirmed'?'on':''}" onclick="chgSt('${id}','confirmed',this)">✓ 주문 확정</span>
+        <span class="chip c-pend ${e.status==='pending'?'on':''}" onclick="chgSt('${id}','pending',this)">○ 미확정</span>
+        <span class="chip c-fu ${e.status==='followup'?'on':''}" onclick="chgSt('${id}','followup',this)">! Follow-up</span>
+        <span class="chip c-q ${(e.tags||[]).includes('quote')?'on':''}" onclick="chgSt('${id}','quote',this)">$ 견적 요청</span>
       </div>
     </div>
     <div class="e-body">${esc(e.body)}</div>
@@ -659,13 +875,13 @@ function selEmail(id) {
       <button class="note-save" onclick="saveNote('${id}')">저장</button>
     </div>
     <div class="act-bar">
-      <button class="act p" onclick="reAI('${id}')">🤖 AI 재분석</button>
+      <button class="act p" onclick="reAI('${id}')">🤖 재분석</button>
       <button class="act" onclick="delEmail('${id}')">🗑 삭제</button>
     </div>`;
 }
 
-function chgStatus(id,st,el){
-  const e=S.emails.find(x=>x.id===id); if(!e) return;
+function chgSt(id,st,el){
+  const e=S.emails.find(x=>x.id===id);if(!e)return;
   if(st==='quote'){if(!e.tags.includes('quote'))e.tags.push('quote');el.classList.toggle('on');}
   else{
     e.status=st;
@@ -680,32 +896,91 @@ function chgStatus(id,st,el){
 function saveNote(id){const el=document.getElementById('n-'+id);if(el){S.notes[id]=el.value;save();toast('✓ 메모 저장');}}
 
 async function reAI(id){
-  const e=S.emails.find(x=>x.id===id); if(!e) return;
-  showOv('AI 재분석 중...');e.aiAnalyzed=false;
+  const e=S.emails.find(x=>x.id===id);if(!e)return;
+  showOv('AI 재분석 중','',0,'');e.aiAnalyzed=false;
   await aiEmail(e);save();hideOv();selEmail(id);toast('✓ 재분석 완료');
 }
 
-function delEmail(id){S.emails=S.emails.filter(e=>e.id!==id);S.sel=null;save();renderAll();document.getElementById('edetail').innerHTML='<div class="empty-d"><div style="font-size:36px;opacity:.3">📧</div><div>이메일을 선택하세요</div></div>';toast('삭제됨');}
+function delEmail(id){S.emails=S.emails.filter(e=>e.id!==id);S.sel=null;save();renderAll();resetDetail();toast('삭제됨');}
 
 // ── DASHBOARD ───────────────────────────────────────────────
 function updateDash(){
-  const e=S.emails,inq=e.filter(x=>x.status!=='spam'),conf=e.filter(x=>x.status==='confirmed'),pend=e.filter(x=>x.status==='pending'||x.status==='followup'),fu=e.filter(x=>x.status==='followup'||x.tags.includes('followup'));
-  const k0=document.getElementById('k0');if(k0)k0.textContent=inq.length;
+  const e=S.emails;
+  const conf=e.filter(x=>x.status==='confirmed');
+  const pend=e.filter(x=>x.status==='pending'||x.status==='followup');
+  const newCust=e.filter(x=>x.isNewCustomer);
+
+  const k0=document.getElementById('k0');if(k0)k0.textContent=e.length;
   const k1=document.getElementById('k1');if(k1)k1.textContent=conf.length;
   const k2=document.getElementById('k2');if(k2)k2.textContent=pend.length;
-  const k3=document.getElementById('k3');if(k3)k3.textContent=fu.length;
-  const k1s=document.getElementById('k1s');if(k1s)k1s.textContent=`전환율 ${inq.length?Math.round(conf.length/inq.length*100):0}%`;
-  const cats={};e.forEach(x=>{cats[x.category]=(cats[x.category]||0)+1;});
-  const sorted=Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const k3=document.getElementById('k3');if(k3)k3.textContent=newCust.length;
+  const k1s=document.getElementById('k1s');if(k1s)k1s.textContent=`전환율 ${e.length?Math.round(conf.length/e.length*100):0}%`;
+
+  // Category bars
+  const cats={};
+  e.forEach(x=>{cats[x.category]=(cats[x.category]||0)+1;});
+  const sorted=Object.entries(cats).sort((a,b)=>b[1]-a[1]).slice(0,7);
   const mx=Math.max(...sorted.map(x=>x[1]),1);
-  const cols=['var(--accent)','var(--green)','var(--amber)','var(--purple)','var(--teal)','var(--red)'];
+  const cols=['var(--accent)','var(--green)','var(--amber)','var(--purple)','var(--teal)','var(--red)','var(--text2)'];
   const cb=document.getElementById('catBars');
-  if(cb)cb.innerHTML=sorted.map(([c,n],i)=>`<div class="br"><div class="bl">${esc(c)}</div><div class="bt"><div class="bf" style="width:${Math.round(n/mx*100)}%;background:${cols[i%6]}"></div></div><div class="bn">${n}</div></div>`).join('');
-  const cv=document.getElementById('tc');if(!cv)return;
-  const labels=[],data=[];
-  for(let i=13;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);labels.push(`${d.getMonth()+1}/${d.getDate()}`);data.push(e.filter(x=>{const ed=new Date(x.date);return ed.getDate()===d.getDate()&&ed.getMonth()===d.getMonth()&&ed.getFullYear()===d.getFullYear();}).length);}
+  if(cb)cb.innerHTML=sorted.map(([c,n],i)=>`<div class="br"><div class="bl">${esc(c)}</div><div class="bt"><div class="bf" style="width:${Math.round(n/mx*100)}%;background:${cols[i%7]}"></div></div><div class="bn">${n}</div></div>`).join('');
+
+  updateTrendChart();
+  updateTopCustomers();
+  updateYearStats();
+}
+
+function updateTrendChart(){
+  const canvas=document.getElementById('tc');if(!canvas)return;
+  const yr=S.selectedYear;
+
+  let labels=[],data=[];
+  if(yr==='all'){
+    // 연도별
+    const years={};
+    S.emails.forEach(e=>{const y=new Date(e.date).getFullYear();years[y]=(years[y]||0)+1;});
+    const sorted=Object.entries(years).sort((a,b)=>a[0]-b[0]);
+    labels=sorted.map(x=>x[0]+'년');
+    data=sorted.map(x=>x[1]);
+  } else {
+    // 월별
+    for(let m=0;m<12;m++){
+      labels.push(`${m+1}월`);
+      data.push(S.emails.filter(e=>{const d=new Date(e.date);return d.getFullYear()===parseInt(yr)&&d.getMonth()===m;}).length);
+    }
+  }
+
   if(S.tc)S.tc.destroy();
-  S.tc=new Chart(cv,{type:'line',data:{labels,datasets:[{data,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.1)',fill:true,tension:.4,pointRadius:3}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#4a5575',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'}},y:{ticks:{color:'#4a5575',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'}}}}});
+  S.tc=new Chart(canvas,{
+    type:'bar',
+    data:{labels,datasets:[{data,backgroundColor:'rgba(59,130,246,.6)',borderColor:'#3b82f6',borderWidth:1,borderRadius:3}]},
+    options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#4a5575',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'}},y:{ticks:{color:'#4a5575',font:{size:10}},grid:{color:'rgba(255,255,255,.04)'}}}}
+  });
+}
+
+function updateTopCustomers(){
+  const custMap={};
+  S.emails.forEach(e=>{
+    const key=e.email;
+    if(!custMap[key])custMap[key]={name:e.from,email:e.email,count:0,lastDate:e.date,confirmed:0};
+    custMap[key].count++;
+    if(e.status==='confirmed')custMap[key].confirmed++;
+    if(new Date(e.date)>new Date(custMap[key].lastDate))custMap[key].lastDate=e.date;
+  });
+  const top=Object.values(custMap).sort((a,b)=>b.count-a.count).slice(0,8);
+  const div=document.getElementById('topCustomers');
+  if(!div)return;
+  if(!top.length){div.innerHTML='<div style="color:var(--text3);font-size:13px;padding:10px">데이터 없음</div>';return;}
+  div.innerHTML=`<table style="width:100%;border-collapse:collapse;font-size:12px">
+    <tr style="color:var(--text3)"><th style="padding:5px 8px;text-align:left;font-weight:500">고객/회사</th><th style="padding:5px 8px;text-align:left;font-weight:500">이메일</th><th style="padding:5px 8px;text-align:center;font-weight:500">문의</th><th style="padding:5px 8px;text-align:center;font-weight:500">확정</th><th style="padding:5px 8px;text-align:left;font-weight:500">최근 문의</th></tr>
+    ${top.map(c=>`<tr style="border-top:1px solid var(--border)">
+      <td style="padding:7px 8px;color:var(--text);font-weight:500">${esc(c.name)}</td>
+      <td style="padding:7px 8px;color:var(--text3)">${esc(c.email)}</td>
+      <td style="padding:7px 8px;text-align:center;color:var(--accent)">${c.count}</td>
+      <td style="padding:7px 8px;text-align:center;color:var(--green)">${c.confirmed}</td>
+      <td style="padding:7px 8px;color:var(--text3)">${new Date(c.lastDate).toLocaleDateString('ko-KR')}</td>
+    </tr>`).join('')}
+  </table>`;
 }
 
 // ── PENDING ─────────────────────────────────────────────────
@@ -716,30 +991,41 @@ function renderPending(){
   if(S.pf==='urgent')emails=emails.filter(e=>e.urgency==='high');
   if(S.pf==='followup')emails=emails.filter(e=>e.tags.includes('followup')||e.status==='followup');
   if(S.pf==='quote')emails=emails.filter(e=>e.tags.includes('quote'));
+  if(S.pf==='new')emails=emails.filter(e=>e.isNewCustomer);
   emails.sort((a,b)=>{const m={high:0,medium:1,low:2};return(m[a.urgency]-m[b.urgency])||(new Date(a.date)-new Date(b.date));});
   const tb=document.getElementById('pbody');if(!tb)return;
-  if(!emails.length){tb.innerHTML=`<tr><td colspan="8" style="text-align:center;padding:32px;color:var(--text3)">미확정 문의 없음</td></tr>`;return;}
+  if(!emails.length){tb.innerHTML=`<tr><td colspan="8" style="text-align:center;padding:28px;color:var(--text3)">미확정 문의 없음</td></tr>`;return;}
   tb.innerHTML=emails.map(e=>{
     const days=Math.floor((Date.now()-new Date(e.date))/86400000);
     const dc=days>=7?'dc2':days>=3?'dw':'dok';
-    return `<tr onclick="jumpToEmail('${e.id}')">
+    return`<tr onclick="jumpTo('${e.id}')">
       <td><span class="ud u-${e.urgency[0]}"></span>${{high:'긴급',medium:'보통',low:'낮음'}[e.urgency]}</td>
-      <td><div style="font-weight:500">${esc(e.from)}</div><div style="font-size:11px;color:var(--text3)">${esc(e.email)}</div></td>
-      <td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(e.subject)}</td>
-      <td>${esc(e.category)}</td>
+      <td><div style="font-weight:500">${esc(e.from)}</div><div style="font-size:10px;color:var(--text3)">${esc(e.email)}</div>${e.isNewCustomer?'<span style="font-size:10px;color:var(--teal)">★ 신규</span>':''}</td>
+      <td style="max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(e.subject)}</td>
+      <td style="font-size:12px">${esc(e.category)}</td>
       <td style="font-size:11px;color:var(--text3)">${new Date(e.date).toLocaleDateString('ko-KR')}</td>
       <td><span class="db ${dc}">${days}일</span></td>
       <td style="font-size:12px;color:${e.status==='followup'?'var(--red)':'var(--amber)'}">${e.status==='followup'?'! Follow-up':'○ 미확정'}</td>
-      <td><button class="qc" onclick="event.stopPropagation();qConfirm('${e.id}')">✓ 확정</button></td>
+      <td><button class="qc" onclick="event.stopPropagation();qConf('${e.id}')">✓ 확정</button></td>
     </tr>`;
   }).join('');
 }
 
-function jumpToEmail(id){document.querySelector('.nav-tab').click();setTimeout(()=>selEmail(id),100);}
-function qConfirm(id){const e=S.emails.find(x=>x.id===id);if(!e)return;e.status='confirmed';e.tags=e.tags.filter(t=>t!=='pending'&&t!=='followup');if(!e.tags.includes('confirmed'))e.tags.push('confirmed');save();renderAll();toast('✓ 주문 확정 처리');}
+function jumpTo(id){document.querySelector('.nav-tab').click();setTimeout(()=>selEmail(id),100);}
+function qConf(id){const e=S.emails.find(x=>x.id===id);if(!e)return;e.status='confirmed';e.tags=e.tags.filter(t=>t!=='pending'&&t!=='followup');if(!e.tags.includes('confirmed'))e.tags.push('confirmed');save();renderAll();toast('✓ 주문 확정');}
 
-// ── UTILS ───────────────────────────────────────────────────
-function showOv(m){const o=document.getElementById('ov');document.getElementById('ovMsg').textContent=m;o.classList.remove('h');}
+// ── OVERLAY ─────────────────────────────────────────────────
+function showOv(title,sub,pct,stat){
+  const o=document.getElementById('ov');o.classList.remove('h');
+  document.getElementById('ovTitle').textContent=title;
+  document.getElementById('ovSub').textContent=sub;
+  document.getElementById('ovProg').style.width=pct+'%';
+  document.getElementById('ovStat').textContent=stat;
+}
+function setOvProg(pct,stat){
+  document.getElementById('ovProg').style.width=pct+'%';
+  document.getElementById('ovStat').textContent=stat;
+}
 function hideOv(){document.getElementById('ov').classList.add('h');}
 let tt;
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3000);}
