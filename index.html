@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -232,6 +232,7 @@ body{background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-d
   <div class="topbar-right">
     <div style="font-size:11px;color:var(--text3)" id="syncLbl"></div>
     <button class="history-btn" id="histBtn" onclick="syncHistory()" style="display:none">📅 과거 이메일 불러오기</button>
+    <button class="history-btn" id="cleanBtn" onclick="cleanSpamNow()" style="display:none;background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.3);color:var(--red)">🧹 광고 정리</button>
     <button class="sync-btn" id="syncBtn" onclick="doSync()" style="display:none"><span id="syncIco">↻</span> 동기화</button>
     <div class="user-badge" id="uBadge" style="display:none" onclick="signOut()">
       <div class="user-avatar" id="uAv">?</div>
@@ -552,6 +553,7 @@ function showApp(){
   document.getElementById('navTabs').style.display='flex';
   document.getElementById('syncBtn').style.display='flex';
   document.getElementById('histBtn').style.display='flex';
+  document.getElementById('cleanBtn').style.display='flex';
   document.getElementById('uBadge').style.display='flex';
   const name=S.account.name||S.account.username;
   const ini=name.split(' ').map(n=>n[0]).join('').slice(0,2).toUpperCase();
@@ -625,14 +627,20 @@ async function syncHistory(){
 }
 
 async function fetchEmails(token,startDate,endDate,maxCount){
-  let url='https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messages?$top=50&$orderby=receivedDateTime desc&$select=id,subject,from,receivedDateTime,body,isRead';
-  if(startDate&&endDate){
-    url+=`&$filter=receivedDateTime ge ${startDate} and receivedDateTime le ${endDate}`;
-  }
+  // ── 1단계: Graph API 서버에서 먼저 필터링 ──────────────────
+  // inferenceClassification eq 'focused' = Outlook이 중요하다고 분류한 것만
+  // 자동발송(List-Unsubscribe 헤더) 제외는 API에서 직접 불가하여 클라이언트에서 처리
+  let url='https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messages'
+    +'?$top=50&$orderby=receivedDateTime desc'
+    +'&$select=id,subject,from,receivedDateTime,body,isRead,importance,conversationId';
 
-  let newCount=0;
-  let fetched=0;
-  let nextLink=url;
+  let filter='';
+  if(startDate&&endDate){
+    filter=`receivedDateTime ge ${startDate} and receivedDateTime le ${endDate}`;
+  }
+  if(filter) url+=`&$filter=${filter}`;
+
+  let newCount=0,fetched=0,nextLink=url;
 
   while(nextLink&&fetched<maxCount){
     const res=await fetch(nextLink,{headers:{Authorization:'Bearer '+token}});
@@ -642,36 +650,106 @@ async function fetchEmails(token,startDate,endDate,maxCount){
     for(const m of data.value||[]){
       if(S.emails.find(e=>e.id===m.id))continue;
 
+      const fromEmail=(m.from?.emailAddress?.address||'').toLowerCase();
+      const fromName=(m.from?.emailAddress?.name||'').toLowerCase();
+      const subject=(m.subject||'');
       const body=(m.body?.content||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+
+      // ── 2단계: 강화된 클라이언트 필터링 ──────────────────────
+      // 발신 도메인 블랙리스트 (확장)
+      const blockedDomains=[
+        // 대형 유통/이커머스
+        'amazon','ebay','walmart','aliexpress','shopify','etsy','wish.com',
+        'wayfair','overstock','target.com','homedepot','lowes','grainger',
+        'mcmaster','fastenal','zoro.com','uline.com','globalindustrial',
+        'hdSupply','msc.com','wurth','staples','officedepot',
+        // 자동발송/알림
+        'noreply','no-reply','donotreply','do-not-reply','notifications@',
+        'alerts@','updates@','info@mailchimp','bounce@','postmaster@',
+        'mailer-daemon','support@zendesk','helpdesk@','feedback@',
+        'autoconfirm','auto-confirm','system@','robot@','bot@',
+        // 마케팅/광고 플랫폼
+        'mailchimp','sendgrid','constantcontact','hubspot','marketo',
+        'salesforce','klaviyo','campaign','newsletter','marketing@',
+        'promo@','deals@','offers@','promotions@','digest@',
+        // 소셜/테크
+        'linkedin.com','facebook.com','twitter.com','instagram.com',
+        'google.com','microsoft.com','apple.com','adobe.com',
+        'intuit.com','quickbooks','slack.com','zoom.us',
+        // 금융/배송
+        'paypal.com','stripe.com','fedex.com','ups.com','usps.com',
+        'dhl.com','billing@','invoice@','receipt@','payment@',
+        // 채용/HR
+        'indeed.com','glassdoor','ziprecruiter','workday','adp.com',
+      ];
+
+      let blocked=false;
+      for(const d of blockedDomains){
+        if(fromEmail.includes(d)||fromName.includes(d)){blocked=true;break;}
+      }
+      if(blocked)continue;
+
+      // 제목 블랙리스트 패턴
+      const blockedSubjects=[
+        /unsubscribe/i,/click here/i,/limited time offer/i,
+        /special offer/i,/congratulations/i,/you.ve won/i,
+        /\[invoice\]/i,/payment receipt/i,/order confirmation #/i,
+        /shipment notification/i,/tracking update/i,/your package/i,
+        /account statement/i,/security alert/i,/verify your account/i,
+        /password reset/i,/automatic reply/i,/out of office/i,
+        /delivery notification/i,/do not reply/i,/automated message/i,
+        /system notification/i,/\[spam\]/i,/\[bulk\]/i,
+        /newsletter/i,/weekly digest/i,/monthly report/i,
+        /webinar invitation/i,/free trial/i,/demo request confirmed/i,
+        /survey:/i,/feedback request/i,/rate your experience/i,
+      ];
+      let subjectBlocked=false;
+      for(const p of blockedSubjects){
+        if(p.test(subject)){subjectBlocked=true;break;}
+      }
+      if(subjectBlocked)continue;
+
+      // 본문 자동발송 패턴 (3개 이상이면 자동발송으로 판단)
+      const autoPatterns=[
+        /this is an automated/i,/auto-generated/i,/do not reply to this/i,
+        /to unsubscribe/i,/manage your (email )?preferences/i,
+        /view (this email )?in (your )?browser/i,/having trouble viewing/i,
+        /©\s*20\d\d/,/all rights reserved/i,/privacy policy/i,
+        /you are receiving this (email )?because/i,
+        /powered by/i,/sent from our/i,/this message was sent/i,
+        /click here to unsubscribe/i,/opt.out/i,
+      ];
+      const bodyLower=body.toLowerCase().slice(0,800);
+      let autoCount=0;
+      for(const p of autoPatterns){if(p.test(bodyLower))autoCount++;}
+      if(autoCount>=2)continue;
+
+      // 본문 너무 짧으면 제외
+      if(body.replace(/\s/g,'').length<60)continue;
+
+      // ── 3단계: 통과한 이메일만 저장 ──────────────────────────
       const candidate={
         id:m.id,
         from:m.from?.emailAddress?.name||'',
-        email:m.from?.emailAddress?.address||'',
-        subject:m.subject||'(제목 없음)',
+        email:fromEmail,
+        subject,
         body:body.slice(0,2000),
         date:m.receivedDateTime,
-        status:'pending',
-        category:'미분류',products:[],urgency:'medium',
+        status:'pending',category:'미분류',products:[],urgency:'medium',
         aiAnalyzed:false,aiSummary:'AI 분석 필요',
-        tags:['inquiry'],isRead:m.isRead,
-        isNewCustomer:false,
+        tags:['inquiry'],isRead:m.isRead,isNewCustomer:false,
       };
 
-      // 핵심: 실제 문의 이메일만 저장
-      if(isRealInquiry(candidate)){
-        S.emails.unshift(candidate);
-        newCount++;
-      }
+      S.emails.unshift(candidate);
+      newCount++;
     }
 
     fetched+=(data.value||[]).length;
     nextLink=data['@odata.nextLink']||null;
-    await sleep(100); // API rate limit 방지
+    await sleep(150);
   }
 
-  // 신규 고객 표시 (해당 이메일 도메인으로 처음 온 경우)
   markNewCustomers();
-
   return newCount;
 }
 
@@ -711,32 +789,43 @@ async function analyzeAll(){
 }
 
 async function aiEmail(obj){
-  const p=`You are an email classifier for Hy-Weld Inc. (industrial welding supplies, wire rope, casters — Norcross, Georgia).
+  const p=`You are an email classifier for Hy-Weld Inc. (welding supplies, wire rope, casters — Norcross, Georgia USA).
+
+FIRST: Is this a REAL human business inquiry? 
+REAL = actual person asking about products/pricing/availability/orders/technical questions
+NOT REAL = automated notifications, newsletters, marketing, vendor ads, shipping alerts, invoices, LinkedIn/social, recruitment, financial alerts, out-of-office, system emails
 
 Return ONLY valid JSON, no markdown:
-{"status":"confirmed"|"pending"|"followup","category":"한글카테고리","products":["제품명"],"urgency":"high"|"medium"|"low","tags":["inquiry","confirmed","pending","followup","quote"],"aiSummary":"2-3문장 한국어 요약 및 필요 액션","customerType":"existing"|"new","estimatedValue":"low"|"medium"|"high"}
+{"isRealInquiry":true,"status":"confirmed"|"pending"|"followup","category":"한글카테고리","products":["제품명"],"urgency":"high"|"medium"|"low","tags":["inquiry","confirmed","pending","followup","quote"],"aiSummary":"2-3문장 한국어 요약 및 액션","estimatedValue":"low"|"medium"|"high"}
 
-- confirmed: PO번호 포함, 명확한 주문 확정
-- pending: 문의 단계
-- followup: 재문의 or 3일 이상 경과
+If NOT real inquiry: {"isRealInquiry":false,"status":"pending","category":"","products":[],"urgency":"low","tags":[],"aiSummary":"","estimatedValue":"low"}
 
 From:${obj.from}<${obj.email}>
 Subject:${obj.subject}
-Body:${obj.body.slice(0,600)}`;
+Body:${obj.body.slice(0,700)}`;
 
   try{
     const r=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:350,messages:[{role:'user',content:p}]})
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:400,messages:[{role:'user',content:p}]})
     });
     if(!r.ok)return;
     const d=await r.json();
     const t=d.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
     const res=JSON.parse(t);
-    obj.status=res.status||'pending';obj.category=res.category||'기타';
-    obj.products=res.products||[];obj.urgency=res.urgency||'medium';
-    obj.tags=res.tags||['inquiry'];obj.aiSummary=res.aiSummary||'';
-    obj.customerType=res.customerType||'existing';
+
+    // AI가 실제 문의 아니라고 판단하면 목록에서 제거
+    if(res.isRealInquiry===false){
+      S.emails=S.emails.filter(e=>e.id!==obj.id);
+      return;
+    }
+
+    obj.status=res.status||'pending';
+    obj.category=res.category||'기타';
+    obj.products=res.products||[];
+    obj.urgency=res.urgency||'medium';
+    obj.tags=res.tags||['inquiry'];
+    obj.aiSummary=res.aiSummary||'';
     obj.estimatedValue=res.estimatedValue||'medium';
     obj.aiAnalyzed=true;
   }catch(e){}
@@ -1030,6 +1119,24 @@ function hideOv(){document.getElementById('ov').classList.add('h');}
 let tt;
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3000);}
 function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+
+async function cleanSpamNow(){
+  const total=S.emails.length;
+  if(!total){toast("이메일이 없습니다.");return;}
+  if(!confirm(`저장된 ${total}개 이메일을 AI로 재검토하여 광고/자동발송을 제거합니다. 시간이 걸릴 수 있습니다. 계속할까요?`))return;
+  showOv("광고 이메일 정리 중","AI가 각 이메일을 재검토합니다...",0,"");
+  const toCheck=[...S.emails];
+  for(let i=0;i<toCheck.length;i++){
+    const e=toCheck[i];
+    e.aiAnalyzed=false;
+    await aiEmail(e);
+    setOvProg(Math.round((i+1)/toCheck.length*100),`${i+1}/${toCheck.length} 검토 완료 (현재 ${S.emails.length}개 유지)`);
+    await sleep(150);
+  }
+  save();hideOv();renderAll();
+  const removed=total-S.emails.length;
+  toast(`✓ 정리 완료! ${removed}개 광고/자동 이메일 제거, ${S.emails.length}개 실제 문의 유지`);
+}
 </script>
 </body>
 </html>
